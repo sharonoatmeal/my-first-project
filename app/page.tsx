@@ -172,7 +172,7 @@ export default function Home() {
             <a href="https://github.com/sharonoatmeal" className="text-gray-700 hover:text-black">
               <span className="text-xl">🐙</span> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/shang-jung-wen-887465301/" className="text-gray-700 hover:text-blue-700">
+            <a href="https://linkedin.com/in/你的linkedin" className="text-gray-700 hover:text-blue-700">
               <span className="text-xl">💼</span> LinkedIn
             </a>
             <a href="mailto:sharonwen101@gmail.com" className="text-gray-700 hover:text-red-600">
@@ -184,74 +184,8 @@ export default function Home() {
 
       {/* 頁尾 */}
       <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-200 text-center text-gray-500">
-        <p>© 2024 我的作品集。使用 Next.js + Tailwind CSS 建立。最後更新時間：{new Date().toLocaleDateString('zh-TW')}</p>
+        <p>© 2024 Sharon. 使用 Next.js + Tailwind CSS 建立。最後更新時間：{new Date().toLocaleDateString('zh-TW')}</p>
       </footer>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* 聯絡區塊 */}
-<div className="flex flex-wrap justify-center gap-6 mb-10">
-  <a 
-    href="https://github.com/sharonoatmeal"
-    className="flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span className="text-2xl">🐙</span>
-    <span className="font-medium">GitHub</span>
-  </a>
-  <a 
-    href="https://www.linkedin.com/in/shang-jung-wen-887465301/"
-    className="flex items-center gap-3 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span className="text-2xl">💼</span>
-    <span className="font-medium">LinkedIn</span>
-  </a>
-  <a 
-    href="mailto:sharonwen101@gmail.com"
-    className="flex items-center gap-3 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition"
-  >
-    <span className="text-2xl">✉️</span>
-    <span className="font-medium">Email</span>
-  </a>
-</div>
-
