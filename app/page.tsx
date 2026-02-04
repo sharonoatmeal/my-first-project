@@ -3,44 +3,44 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white p-8">
-      {/* 導航欄 */}
+      {/* Navigation Bar */}
       <nav className="max-w-6xl mx-auto flex justify-between items-center mb-16">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
-          <span className="text-xl font-bold text-gray-800">Sharon的作品集</span>
+          <span className="text-xl font-bold text-gray-800">Sharon's Portfolio</span>
         </div>
         <div className="hidden md:flex space-x-8">
-          <a href="#" className="text-gray-600 hover:text-blue-600 transition">首頁</a>
-          <a href="#" className="text-gray-600 hover:text-blue-600 transition">專案</a>
-          <a href="#" className="text-gray-600 hover:text-blue-600 transition">技術棧</a>
-          <a href="#" className="text-gray-600 hover:text-blue-600 transition">關於我</a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition">Home</a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition">Projects</a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition">Tech Stack</a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition">About</a>
         </div>
         <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-          聯絡我
+          Contact Me
         </button>
       </nav>
 
-      {/* 主內容區 */}
+      {/* Main Content */}
       <main className="max-w-6xl mx-auto">
-        {/* 英雄區塊 */}
+        {/* Hero Section */}
         <section className="mb-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                從 <span className="text-blue-600">工程管理</span><br />
-                到<span className="text-blue-600">全端開發</span>
+                From <span className="text-blue-600">Engineering Management</span><br />
+                to <span className="text-blue-600">Full-Stack Development</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                我具備系統化工程管理知識，並掌握現代全端開發技能。
-                能將產品構想快速落地驗證，同時以工程思維優化流程、
-                控制風險與成本。
+                I bring systematic engineering management expertise combined with modern full-stack development skills.
+                I can quickly transform product ideas into working prototypes, while optimizing processes,
+                controlling risks, and managing costs with an engineering mindset.
               </p>
               <div className="flex space-x-4">
                 <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
-                  查看我的專案
+                  View My Projects
                 </button>
                 <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition font-medium">
-                  下載履歷
+                  Download Resume
                 </button>
               </div>
             </div>
@@ -48,17 +48,17 @@ export default function Home() {
               <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 aspect-square flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">🚀</div>
-                  <h3 className="text-2xl font-bold text-gray-800">學習進度</h3>
-                  <p className="text-gray-600 mt-2">正在打造完整作品集</p>
+                  <h3 className="text-2xl font-bold text-gray-800">Learning Progress</h3>
+                  <p className="text-gray-600 mt-2">Building a complete portfolio</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 技術棧展示 */}
+        {/* Tech Stack Display */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">技術棧</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Tech Stack</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { name: 'Next.js', color: 'bg-gray-900', text: 'text-white' },
@@ -77,30 +77,32 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 專案展示 */}
+        {/* Projects Display */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">專案作品</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: '個人作品集網站',
-                desc: '使用 Next.js 14 + TypeScript + Tailwind CSS 打造響應式網站',
+                title: 'Personal Portfolio Website',
+                desc: 'A responsive website built with Next.js 14 + TypeScript + Tailwind CSS',
                 tech: ['Next.js', 'TypeScript', 'Tailwind'],
-                status: '進行中',
+                status: 'In Progress',
                 link: '#'
               },
               {
-                title: '全端 SaaS 應用',
-                desc: '規劃中的全端項目，將使用 AWS RDS 和 Vercel 部署',
+                title: 'Full-Stack SaaS Application',
+                desc: 'A planned full-stack project using AWS RDS and Vercel deployment',
                 tech: ['Next.js', 'AWS', 'PostgreSQL'],
-                status: '規劃中',
+                status: 'Planned',
                 link: '#'
               },
             ].map((project) => (
               <div key={project.title} className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-sm ${project.status === '進行中' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'}`}>
+                  <span className={`px-3 py-1 rounded-full text-sm ${
+                    project.status === 'In Progress' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+                  }`}>
                     {project.status}
                   </span>
                 </div>
@@ -113,24 +115,24 @@ export default function Home() {
                   ))}
                 </div>
                 <a href={project.link} className="text-blue-600 hover:text-blue-800 font-medium">
-                  查看詳情 →
+                  View Details →
                 </a>
               </div>
             ))}
           </div>
         </section>
 
-        {/* 學習里程碑 */}
+        {/* Learning Milestones */}
         <section className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">學習里程碑</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Learning Milestones</h2>
           <div className="space-y-6 max-w-2xl mx-auto">
             {[
-              { task: '建立 GitHub 帳號與專案', status: 'completed', date: '2024.03' },
-              { task: '學習 Next.js 基礎與 Tailwind CSS', status: 'completed', date: '2024.03' },
-              { task: '部署第一個專案到 Vercel', status: 'current', date: '2024.03' },
-              { task: '學習 TypeScript 進階功能', status: 'pending', date: '2024.04' },
-              { task: '完成 AWS SAA 認證', status: 'pending', date: '2024.04' },
-              { task: '建立完整全端專案', status: 'pending', date: '2024.05' },
+              { task: 'Set up GitHub account and projects', status: 'completed', date: '2024.03' },
+              { task: 'Learn Next.js basics and Tailwind CSS', status: 'completed', date: '2024.03' },
+              { task: 'Deploy first project to Vercel', status: 'current', date: '2024.03' },
+              { task: 'Master advanced TypeScript features', status: 'pending', date: '2024.04' },
+              { task: 'Complete AWS SAA Certification', status: 'pending', date: '2024.04' },
+              { task: 'Build a complete full-stack project', status: 'pending', date: '2024.05' },
             ].map((item) => (
               <div key={item.task} className="flex items-center">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
@@ -162,17 +164,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 聯絡區塊 */}
+        {/* Contact Section */}
         <section className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">準備好開始合作了嗎？</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Collaborate?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            我正在尋找全端開發或產品工程師的機會，如果你有相關職缺或想交流技術，歡迎聯絡！
+            I'm seeking opportunities in full-stack development or product engineering. 
+            If you have relevant positions or want to discuss technology, feel free to reach out!
           </p>
           <div className="flex justify-center space-x-6">
             <a href="https://github.com/sharonoatmeal" className="text-gray-700 hover:text-black">
               <span className="text-xl">🐙</span> GitHub
             </a>
-            <a href="https://linkedin.com/in/你的linkedin" className="text-gray-700 hover:text-blue-700">
+            <a href="https://www.linkedin.com/in/shang-jung-wen-887465301/" className="text-gray-700 hover:text-blue-700">
               <span className="text-xl">💼</span> LinkedIn
             </a>
             <a href="mailto:sharonwen101@gmail.com" className="text-gray-700 hover:text-red-600">
@@ -182,9 +185,9 @@ export default function Home() {
         </section>
       </main>
 
-      {/* 頁尾 */}
+      {/* Footer */}
       <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-200 text-center text-gray-500">
-        <p>© 2024 Sharon. 使用 Next.js + Tailwind CSS 建立。最後更新時間：{new Date().toLocaleDateString('zh-TW')}</p>
+        <p>© 2024 Sharon. Built with Next.js + Tailwind CSS. Last updated: {new Date().toLocaleDateString('en-US')}</p>
       </footer>
     </div>
   );
