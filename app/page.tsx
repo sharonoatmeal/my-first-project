@@ -127,12 +127,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Learning Milestones</h2>
           <div className="space-y-6 max-w-2xl mx-auto">
             {[
-              { task: 'Set up GitHub account and projects', status: 'completed', date: '2024.03' },
-              { task: 'Learn Next.js basics and Tailwind CSS', status: 'completed', date: '2024.03' },
-              { task: 'Deploy first project to Vercel', status: 'current', date: '2024.03' },
-              { task: 'Master advanced TypeScript features', status: 'pending', date: '2024.04' },
-              { task: 'Complete AWS SAA Certification', status: 'pending', date: '2024.04' },
-              { task: 'Build a complete full-stack project', status: 'pending', date: '2024.05' },
+              { task: 'Set up GitHub account and projects', status: 'completed', date: '2026.02' },
+              { task: 'Learn Next.js basics and Tailwind CSS', status: 'completed', date: '2026.02' },
+              { task: 'Deploy first project to Vercel', status: 'current', date: '2026.02' },
+              { task: 'Master advanced TypeScript features', status: 'pending', date: '2026.03' },
+              { task: 'Complete AWS SAA Certification', status: 'pending', date: '2026.04' },
+              { task: 'Build a complete full-stack project', status: 'pending', date: '2026.05' },
             ].map((item) => (
               <div key={item.task} className="flex items-center">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
@@ -187,7 +187,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-200 text-center text-gray-500">
-        <p>© 2024 Sharon. Built with Next.js + Tailwind CSS. Last updated: {new Date().toLocaleDateString('en-US')}</p>
+        <p>© 2026 Sharon. Built with Next.js + Tailwind CSS. Last updated: {new Date().toLocaleDateString('en-US')}</p>
       </footer>
     </div>
   );
