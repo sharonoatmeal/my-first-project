@@ -1,193 +1,210 @@
 import Image from 'next/image';
 
 export default function Home() {
+  // 1. 技術棧分類定義
+  const techCategories = [
+    { 
+      category: 'Cloud & Infrastructure', 
+      techs: ['AWS (EC2, S3, Lambda)', 'Docker', 'CI/CD', 'IAM & Security'], 
+      icon: '☁️',
+      color: 'text-orange-600' 
+    },
+    { 
+      category: 'Full-Stack Development', 
+      techs: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL'], 
+      icon: '💻',
+      color: 'text-blue-600' 
+    },
+    { 
+      category: 'Frontend Engineering', 
+      techs: ['React', 'Tailwind CSS', 'Responsive Design', 'ISR/SSG'], 
+      icon: '🎨',
+      color: 'text-teal-600' 
+    },
+    { 
+      category: 'Data & Management', 
+      techs: ['Python (AI)', 'SQL', 'Tableau', 'Agile/Scrum'], 
+      icon: '📊',
+      color: 'text-indigo-600' 
+    },
+  ];
+
+  // 2. 專案清單定義
+  const projects = [
+    {
+      title: 'SaaS Management Dashboard',
+      desc: 'Architected a scalable SaaS admin portal integrating AWS S3 for media storage and Serverless functions for backend efficiency.',
+      tech: ['Next.js', 'AWS Lambda', 'S3', 'PostgreSQL'],
+      status: 'In Progress',
+      link: '#'
+    },
+    {
+      title: 'Cloud-Optimized Market Engine',
+      desc: 'A Node.js application deployed on AWS EC2 with RDS database integration, demonstrating high-availability infrastructure setup.',
+      tech: ['Node.js', 'AWS EC2', 'RDS', 'Git'],
+      status: 'Completed',
+      link: '#'
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white p-8">
-      {/* Navigation Bar */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white p-8">
+      {/* 導覽列 Navigation Bar */}
       <nav className="max-w-6xl mx-auto flex justify-between items-center mb-16">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
-          <span className="text-xl font-bold text-gray-800">Sharon's Portfolio</span>
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
+          <span className="text-xl font-bold text-gray-800">Sharon Wen</span>
         </div>
         <div className="hidden md:flex space-x-8">
-          <a href="#" className="text-gray-600 hover:text-blue-600 transition">Home</a>
           <a href="#" className="text-gray-600 hover:text-blue-600 transition">Projects</a>
-          <a href="#" className="text-gray-600 hover:text-blue-600 transition">Tech Stack</a>
-          <a href="#" className="text-gray-600 hover:text-blue-600 transition">About</a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition">Experience</a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition">Stack</a>
         </div>
-        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
           Contact Me
         </button>
       </nav>
 
-      {/* Main Content */}
       <main className="max-w-6xl mx-auto">
-        {/* Hero Section */}
-        <section className="mb-20">
+        {/* 英雄區塊 Hero Section */}
+        <section className="mb-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                From <span className="text-blue-600">Engineering Management</span><br />
-                to <span className="text-blue-600">Full-Stack Development</span>
+              <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                Available for 2026 Opportunities
+              </div>
+              <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+                Engineering Mgmt <br />
+                <span className="text-blue-600">& Cloud Architect</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                I bring systematic engineering management expertise combined with modern full-stack development skills.
-                I can quickly transform product ideas into working prototypes, while optimizing processes,
-                controlling risks, and managing costs with an engineering mindset.
+                Northeastern MSEM graduate specialized in building scalable full-stack applications. 
+                I bridge the gap between <strong>strategic engineering management</strong> and 
+                <strong>modern cloud infrastructure</strong>.
               </p>
               <div className="flex space-x-4">
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
-                  View My Projects
+                <button className="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-black transition font-medium">
+                  View Projects
                 </button>
                 <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition font-medium">
-                  Download Resume
+                  Download CV
                 </button>
               </div>
             </div>
+            
+            {/* 右側 AWS 認證預告卡片 */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 aspect-square flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🚀</div>
-                  <h3 className="text-2xl font-bold text-gray-800">Learning Progress</h3>
-                  <p className="text-gray-600 mt-2">Building a complete portfolio</p>
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-1 aspect-square shadow-2xl transform hover:rotate-2 transition-transform">
+                <div className="bg-white rounded-[1.4rem] h-full w-full flex flex-col items-center justify-center p-8 text-center">
+                   <div className="text-6xl mb-6">☁️</div>
+                   <h3 className="text-2xl font-bold text-gray-800">AWS Candidate</h3>
+                   <p className="text-gray-500 mt-2">Certified Solutions Architect Associate<br/>(Expected 2026)</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Tech Stack Display */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Tech Stack</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { name: 'Next.js', color: 'bg-gray-900', text: 'text-white' },
-              { name: 'TypeScript', color: 'bg-blue-600', text: 'text-white' },
-              { name: 'Tailwind CSS', color: 'bg-teal-500', text: 'text-white' },
-              { name: 'AWS', color: 'bg-orange-500', text: 'text-white' },
-              { name: 'React', color: 'bg-cyan-500', text: 'text-white' },
-              { name: 'Git/GitHub', color: 'bg-gray-800', text: 'text-white' },
-              { name: 'Vercel', color: 'bg-black', text: 'text-white' },
-              { name: 'PostgreSQL', color: 'bg-blue-500', text: 'text-white' },
-            ].map((tech) => (
-              <div key={tech.name} className={`${tech.color} ${tech.text} p-6 rounded-xl text-center`}>
-                <div className="text-2xl font-bold">{tech.name}</div>
+        {/* 技術核心能力 Core Competencies */}
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 border-l-4 border-blue-600 pl-4">Core Competencies</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {techCategories.map((cat) => (
+              <div key={cat.category} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition group">
+                <div className="text-2xl mb-3 group-hover:scale-110 transition-transform">{cat.icon}</div>
+                <h3 className={`font-bold text-lg mb-4 ${cat.color}`}>{cat.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {cat.techs.map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-gray-50 text-gray-600 rounded text-xs font-medium border border-gray-100">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Projects Display */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Projects</h2>
+        {/* 精選專案 Featured Projects */}
+        <section className="mb-24">
+          <div className="flex justify-between items-end mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 border-l-4 border-blue-600 pl-4">Featured Projects</h2>
+            <a href="https://github.com/sharonoatmeal" className="text-blue-600 hover:underline font-medium">View all on GitHub →</a>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Personal Portfolio Website',
-                desc: 'A responsive website built with Next.js 14 + TypeScript + Tailwind CSS',
-                tech: ['Next.js', 'TypeScript', 'Tailwind'],
-                status: 'In Progress',
-                link: '#'
-              },
-              {
-                title: 'Full-Stack SaaS Application',
-                desc: 'A planned full-stack project using AWS RDS and Vercel deployment',
-                tech: ['Next.js', 'AWS', 'PostgreSQL'],
-                status: 'Planned',
-                link: '#'
-              },
-            ].map((project) => (
-              <div key={project.title} className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-sm ${
-                    project.status === 'In Progress' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+            {projects.map((project) => (
+              <div key={project.title} className="group bg-white border border-gray-200 rounded-2xl p-8 hover:border-blue-300 hover:shadow-xl transition-all">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition">{project.title}</h3>
+                  <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
+                    project.status === 'In Progress' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'
                   }`}>
                     {project.status}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{project.desc}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">{project.desc}</p>
+                <div className="flex flex-wrap gap-2 mb-8">
                   {project.tech.map((t) => (
-                    <span key={t} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                    <span key={t} className="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-semibold">
                       {t}
                     </span>
                   ))}
                 </div>
-                <a href={project.link} className="text-blue-600 hover:text-blue-800 font-medium">
-                  View Details →
+                <a href={project.link} className="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
+                  Case Study <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Learning Milestones */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Learning Milestones</h2>
-          <div className="space-y-6 max-w-2xl mx-auto">
-            {[
-              { task: 'Set up GitHub account and projects', status: 'completed', date: '2026.02' },
-              { task: 'Learn Next.js basics and Tailwind CSS', status: 'completed', date: '2026.02' },
-              { task: 'Deploy first project to Vercel', status: 'current', date: '2026.02' },
-              { task: 'Master advanced TypeScript features', status: 'pending', date: '2026.03' },
-              { task: 'Complete AWS SAA Certification', status: 'pending', date: '2026.04' },
-              { task: 'Build a complete full-stack project', status: 'pending', date: '2026.05' },
-            ].map((item) => (
-              <div key={item.task} className="flex items-center">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
-                  item.status === 'completed' ? 'bg-green-500' :
-                  item.status === 'current' ? 'bg-blue-500' : 'bg-gray-300'
-                } text-white`}>
-                  {item.status === 'completed' ? '✓' : item.status === 'current' ? '→' : '○'}
-                </div>
-                <div className="flex-1">
-                  <div className="flex justify-between">
-                    <span className={`font-medium ${
-                      item.status === 'completed' ? 'text-gray-900' :
-                      item.status === 'current' ? 'text-blue-600' : 'text-gray-500'
-                    }`}>
-                      {item.task}
-                    </span>
-                    <span className="text-gray-500 text-sm">{item.date}</span>
-                  </div>
-                  {item.status === 'current' && (
-                    <div className="mt-1">
-                      <div className="h-2 bg-blue-200 rounded-full">
-                        <div className="h-full w-1/2 bg-blue-600 rounded-full"></div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+        {/* 學習歷程 Roadmap */}
+        <section className="bg-slate-900 rounded-3xl p-10 mb-24 text-white">
+          <h2 className="text-3xl font-bold mb-10 text-center">2026 Roadmap</h2>
+          <div className="max-w-2xl mx-auto space-y-8">
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
+                <div className="w-0.5 h-full bg-gray-700 mt-2"></div>
               </div>
-            ))}
+              <div className="pb-4">
+                <p className="text-sm text-gray-400">Q1 2026</p>
+                <h4 className="text-lg font-bold">Cloud-First Portfolio Deployment</h4>
+                <p className="text-gray-400">Deploying architecture using Next.js, Vercel, and AWS S3 integration.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="w-4 h-4 rounded-full border-2 border-blue-500"></div>
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Q2 2026</p>
+                <h4 className="text-lg font-bold text-blue-400">AWS Certified Solutions Architect</h4>
+                <p className="text-gray-400">Targeting Associate level certification to validate cloud architectural skills.</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Collaborate?</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            I'm seeking opportunities in full-stack development or product engineering. 
-            If you have relevant positions or want to discuss technology, feel free to reach out!
+        {/* 聯絡資訊 Contact Section */}
+        <section className="text-center py-10">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">Let's Build the Future</h2>
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+            Seeking opportunities to apply <strong>Engineering Management</strong> principles 
+            to <strong>Cloud Infrastructure</strong> challenges.
           </p>
-          <div className="flex justify-center space-x-6">
-            <a href="https://github.com/sharonoatmeal" className="text-gray-700 hover:text-black">
-              <span className="text-xl">🐙</span> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/shang-jung-wen-887465301/" className="text-gray-700 hover:text-blue-700">
-              <span className="text-xl">💼</span> LinkedIn
-            </a>
-            <a href="mailto:sharonwen101@gmail.com" className="text-gray-700 hover:text-red-600">
-              <span className="text-xl">✉️</span> Email
-            </a>
+          <div className="flex justify-center space-x-8">
+            <a href="https://github.com/sharonoatmeal" className="text-gray-500 hover:text-black transition-all transform hover:scale-110 font-medium">GitHub</a>
+            <a href="https://www.linkedin.com/in/shang-jung-wen-887465301/" className="text-gray-500 hover:text-blue-700 transition-all transform hover:scale-110 font-medium">LinkedIn</a>
+            <a href="mailto:sharonwen101@gmail.com" className="text-gray-500 hover:text-red-500 transition-all transform hover:scale-110 font-medium">Email</a>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-200 text-center text-gray-500">
-        <p>© 2026 Sharon. Built with Next.js + Tailwind CSS. Last updated: {new Date().toLocaleDateString('en-US')}</p>
+      {/* 頁尾 Footer */}
+      <footer className="max-w-6xl mx-auto mt-24 py-10 border-t border-gray-100 text-center text-gray-400 text-sm">
+        <p>© 2026 Sharon Wen. Built with Next.js 14, TypeScript & AWS Mindset.</p>
+        <p className="mt-2 text-xs text-gray-300 italic">Last updated: {new Date().toLocaleDateString('en-US')}</p>
       </footer>
     </div>
   );
